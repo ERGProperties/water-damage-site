@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 export default function Home() {
@@ -43,6 +45,11 @@ export default function Home() {
             action="https://formspree.io/f/xaqabwyz"
             method="POST"
             className="flex flex-col gap-3"
+            onSubmit={() => {
+              setTimeout(() => {
+                window.location.href = "/thank-you";
+              }, 500);
+            }}
           >
             <input
               type="text"
