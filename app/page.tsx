@@ -8,7 +8,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-blue-600">
             24/7 Water Damage Help
           </h2>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-600 mt-1">
             Serving Your Area • 24/7 Emergency Response
           </p>
         </div>
@@ -16,16 +16,16 @@ export default function Home() {
         {/* CARD */}
         <div className="bg-white p-6 rounded-2xl shadow-md">
 
-          <h1 className="text-2xl font-bold text-center mb-2">
+          <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">
             Water Damage? Get Immediate Help Near You
           </h1>
 
-          <p className="text-center text-gray-600 mb-4">
+          <p className="text-center text-gray-700 mb-4">
             Fast response from local professionals. Available now.
           </p>
 
           {/* TRUST */}
-          <div className="flex justify-center gap-3 text-xs text-gray-500 mb-4">
+          <div className="flex justify-center gap-3 text-xs text-gray-600 mb-4">
             <span>✔ 24/7 Service</span>
             <span>✔ Fast Response</span>
             <span>✔ No Obligation</span>
@@ -42,7 +42,7 @@ export default function Home() {
               name="name"
               placeholder="Full Name"
               required
-              className="border border-gray-300 p-3 rounded-lg"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
             />
 
             <input
@@ -50,7 +50,7 @@ export default function Home() {
               name="phone"
               placeholder="Phone Number"
               required
-              className="border border-gray-300 p-3 rounded-lg"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
             />
 
             <input
@@ -58,14 +58,14 @@ export default function Home() {
               name="zip"
               placeholder="Zip Code"
               required
-              className="border border-gray-300 p-3 rounded-lg"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
             />
 
             <textarea
               name="message"
               placeholder="What happened?"
               rows={3}
-              className="border border-gray-300 p-3 rounded-lg"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
             />
 
             <button className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg text-lg font-semibold">
@@ -82,14 +82,14 @@ export default function Home() {
           </a>
 
           {/* TRUST TEXT */}
-          <p className="text-xs text-gray-500 mt-4 text-center">
+          <p className="text-xs text-gray-600 mt-4 text-center">
             We connect you with trusted local water damage specialists.
           </p>
 
         </div>
 
         {/* URGENCY */}
-        <p className="text-center text-xs text-gray-400 mt-4">
+        <p className="text-center text-xs text-gray-500 mt-4">
           Homeowners are getting help in your area right now
         </p>
 
