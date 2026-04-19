@@ -1,14 +1,21 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-10">
       <div className="max-w-md w-full">
 
-        {/* BRAND */}
-        <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-blue-600">
-            24/7 Water Damage Help
-          </h2>
-          <p className="text-sm text-gray-600 mt-1">
+        {/* LOGO + BRAND */}
+        <div className="flex flex-col items-center mb-6">
+          <Image
+            src="/logo.png"
+            alt="24/7 Water Damage Help"
+            width={180}
+            height={60}
+            priority
+            className="mb-2"
+          />
+          <p className="text-sm text-gray-600">
             Serving Your Area • 24/7 Emergency Response
           </p>
         </div>
