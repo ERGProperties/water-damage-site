@@ -1,13 +1,40 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const response = await fetch("https://formspree.io/f/xaqabwyz", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (response.ok) {
+      window.location.href = "/thank-you";
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+
+    setLoading(false);
+  }
+
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-10">
       <div className="max-w-md w-full">
 
-        {/* LOGO + BRAND */}
+        {/* LOGO */}
         <div className="flex flex-col items-center mb-6">
           <Image
             src="/logo.png"
@@ -33,7 +60,6 @@ export default function Home() {
             Fast response from local professionals. Available now.
           </p>
 
-          {/* TRUST */}
           <div className="flex justify-center gap-3 text-xs text-gray-600 mb-4">
             <span>✔ 24/7 Service</span>
             <span>✔ Fast Response</span>
@@ -41,16 +67,8 @@ export default function Home() {
           </div>
 
           {/* FORM */}
-          <form
-            action="https://formspree.io/f/xaqabwyz"
-            method="POST"
-            className="flex flex-col gap-3"
-            onSubmit={() => {
-              setTimeout(() => {
-                window.location.href = "/thank-you";
-              }, 500);
-            }}
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+
             <input
               type="text"
               name="name"
@@ -82,9 +100,14 @@ export default function Home() {
               className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
             />
 
-            <button className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg text-lg font-semibold">
-              Get Help Now
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg text-lg font-semibold"
+            >
+              {loading ? "Submitting..." : "Get Help Now"}
             </button>
+
           </form>
 
           {/* CALL */}
@@ -95,14 +118,12 @@ export default function Home() {
             Or Call Now
           </a>
 
-          {/* TRUST TEXT */}
           <p className="text-xs text-gray-600 mt-4 text-center">
             We connect you with trusted local water damage specialists.
           </p>
 
         </div>
 
-        {/* URGENCY */}
         <p className="text-center text-xs text-gray-500 mt-4">
           Homeowners are getting help in your area right now
         </p>
