@@ -40,7 +40,7 @@ export default function Home() {
 
           {/* FORM */}
           <form
-            action="https://formspree.io/f/your-form-id"
+            action="https://formspree.io/f/xaqabwyz"
             method="POST"
             className="flex flex-col gap-3"
           >
