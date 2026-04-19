@@ -44,8 +44,8 @@ export default function Home() {
             priority
             className="mb-2"
           />
-          <p className="text-sm text-gray-600">
-            Serving Your Area • 24/7 Emergency Response
+          <p className="text-sm text-gray-600 text-center">
+            Serving Philadelphia & Surrounding Areas • 24/7 Emergency Response
           </p>
         </div>
 
@@ -53,17 +53,18 @@ export default function Home() {
         <div className="bg-white p-6 rounded-2xl shadow-md">
 
           <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">
-            Water Damage? Get Immediate Help Near You
+            Water Damage in Philadelphia? Get Immediate Help
           </h1>
 
           <p className="text-center text-gray-700 mb-4">
-            Fast response from local professionals. Available now.
+            Fast response from local professionals near you. Available 24/7.
           </p>
 
+          {/* TRUST */}
           <div className="flex justify-center gap-3 text-xs text-gray-600 mb-4">
+            <span>✔ Philadelphia Area</span>
             <span>✔ 24/7 Service</span>
             <span>✔ Fast Response</span>
-            <span>✔ No Obligation</span>
           </div>
 
           {/* FORM */}
@@ -88,7 +89,7 @@ export default function Home() {
             <input
               type="text"
               name="zip"
-              placeholder="Zip Code"
+              placeholder="Philadelphia Zip Code"
               required
               className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
             />
@@ -110,22 +111,24 @@ export default function Home() {
 
           </form>
 
-          {/* CALL */}
+          {/* CALL CTA */}
           <a
-            href="tel:+1234567890"
-            className="block text-center mt-4 text-blue-600 font-semibold"
+            href="tel:+12677107712"
+            className="block text-center mt-4 text-blue-600 font-semibold text-lg"
           >
-            Or Call Now
+            Or Call Now: (267) 710-7712
           </a>
 
+          {/* TRUST TEXT */}
           <p className="text-xs text-gray-600 mt-4 text-center">
-            We connect you with trusted local water damage specialists.
+            We connect Philadelphia homeowners with trusted local water damage specialists.
           </p>
 
         </div>
 
+        {/* URGENCY */}
         <p className="text-center text-xs text-gray-500 mt-4">
-          Homeowners are getting help in your area right now
+          Emergency crews are responding in Philadelphia right now
         </p>
 
       </div>
