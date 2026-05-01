@@ -113,10 +113,10 @@ export default function Home() {
 
           {/* CALL CTA */}
           <a
-            href="tel:+12677107712"
+            href="tel:+12677742486"
             className="block text-center mt-4 text-blue-600 font-semibold text-lg"
           >
-            Or Call Now: (267) 710-7712
+            Or Call Now: (267) 774-2486
           </a>
 
           {/* TRUST TEXT */}
