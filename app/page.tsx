@@ -22,6 +22,15 @@ export default function Home() {
     });
 
     if (response.ok) {
+      // 🔥 Google Ads Conversion Tracking
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "conversion", {
+          send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
+          value: 1.0,
+          currency: "USD",
+        });
+      }
+
       window.location.href = "/thank-you";
     } else {
       alert("Something went wrong. Please try again.");
@@ -114,6 +123,13 @@ export default function Home() {
           {/* CALL CTA */}
           <a
             href="tel:+12677742486"
+            onClick={() => {
+              if (typeof window !== "undefined" && (window as any).gtag) {
+                (window as any).gtag("event", "conversion", {
+                  send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
+                });
+              }
+            }}
             className="block text-center mt-4 text-blue-600 font-semibold text-lg"
           >
             Or Call Now: (267) 774-2486
