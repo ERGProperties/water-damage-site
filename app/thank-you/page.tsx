@@ -7,7 +7,7 @@ export default function ThankYou() {
     // 🔥 Fire Google Ads Conversion on page load
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "conversion", {
-        send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
+        send_to: "AW-18133169855/sGWVCOyRhKYcEL_tyMZD",
         value: 1.0,
         currency: "USD",
       });
@@ -35,7 +35,7 @@ export default function ThankYou() {
           onClick={() => {
             if (typeof window !== "undefined" && (window as any).gtag) {
               (window as any).gtag("event", "conversion", {
-                send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
+                send_to: "AW-18133169855/sGWVCOyRhKYcEL_tyMZD",
               });
             }
           }}
