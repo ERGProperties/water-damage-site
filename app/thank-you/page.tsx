@@ -1,4 +1,19 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function ThankYou() {
+  useEffect(() => {
+    // 🔥 Fire Google Ads Conversion on page load
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
+        value: 1.0,
+        currency: "USD",
+      });
+    }
+  }, []);
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="bg-white p-8 rounded-2xl shadow-md text-center max-w-md w-full">
@@ -16,7 +31,14 @@ export default function ThankYou() {
         </p>
 
         <a
-          href="tel:+1234567890"
+          href="tel:+12677742486"
+          onClick={() => {
+            if (typeof window !== "undefined" && (window as any).gtag) {
+              (window as any).gtag("event", "conversion", {
+                send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
+              });
+            }
+          }}
           className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold inline-block"
         >
           Call Now
