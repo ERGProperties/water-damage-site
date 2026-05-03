@@ -22,15 +22,7 @@ export default function Home() {
     });
 
     if (response.ok) {
-      // 🔥 Google Ads Conversion Tracking
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "conversion", {
-          send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
-          value: 1.0,
-          currency: "USD",
-        });
-      }
-
+      // ✅ Redirect only — conversion fires on thank-you page
       window.location.href = "/thank-you";
     } else {
       alert("Something went wrong. Please try again.");
@@ -126,7 +118,10 @@ export default function Home() {
             onClick={() => {
               if (typeof window !== "undefined" && (window as any).gtag) {
                 (window as any).gtag("event", "conversion", {
-                  send_to: "AW-18133169855/yog8CKKDhKYcEL_tyMZD",
+                  // ✅ CALL CONVERSION LABEL (correct one)
+                  send_to: "AW-18133169855/JOpuCPzv5aYcEL_tyMZD",
+                  value: 1.0,
+                  currency: "USD",
                 });
               }
             }}
