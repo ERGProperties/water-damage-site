@@ -22,7 +22,6 @@ export default function Home() {
     });
 
     if (response.ok) {
-      // ✅ Redirect only — conversion fires on thank-you page
       window.location.href = "/thank-you";
     } else {
       alert("Something went wrong. Please try again.");
@@ -36,7 +35,7 @@ export default function Home() {
       <div className="max-w-md w-full">
 
         {/* LOGO */}
-        <div className="flex flex-col items-center mb-6">
+        <div className="flex flex-col items-center mb-4">
           <Image
             src="/logo.png"
             alt="24/7 Water Damage Help"
@@ -46,27 +45,58 @@ export default function Home() {
             className="mb-2"
           />
           <p className="text-sm text-gray-600 text-center">
-            Serving Philadelphia & Surrounding Areas • 24/7 Emergency Response
+            Philadelphia & Surrounding Areas • 24/7 Emergency Response
           </p>
         </div>
+
+        {/* EMERGENCY CALL CTA (TOP) */}
+        <a
+          href="tel:+12677742486"
+          onClick={() => {
+            if (typeof window !== "undefined" && (window as any).gtag) {
+              (window as any).gtag("event", "conversion", {
+                send_to: "AW-18133169855/JOpuCPzv5aYcEL_tyMZD",
+                value: 1.0,
+                currency: "USD",
+              });
+            }
+          }}
+          className="block text-center mb-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl text-lg"
+        >
+          🚨 Call Now for Immediate Help (267) 774-2486
+        </a>
 
         {/* CARD */}
         <div className="bg-white p-6 rounded-2xl shadow-md">
 
+          {/* HEADLINE */}
           <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">
-            Water Damage in Philadelphia? Get Immediate Help
+            Emergency Water Damage? Get Help in 60 Minutes
           </h1>
 
-          <p className="text-center text-gray-700 mb-4">
-            Fast response from local professionals near you. Available 24/7.
+          <p className="text-center text-gray-700 mb-3">
+            Damage spreads every hour. Get connected with a local professional now.
           </p>
 
+          {/* IMAGE */}
+          <Image
+            src="/water-damage.jpg"
+            alt="Water damage emergency"
+            width={500}
+            height={300}
+            className="rounded-lg mb-4"
+          />
+
           {/* TRUST */}
-          <div className="flex justify-center gap-3 text-xs text-gray-600 mb-4">
-            <span>✔ Philadelphia Area</span>
-            <span>✔ 24/7 Service</span>
-            <span>✔ Fast Response</span>
+          <div className="flex justify-center gap-3 text-xs text-gray-600 mb-3">
+            <span>✔ 24/7 Response</span>
+            <span>✔ Local Experts</span>
+            <span>✔ Fast Dispatch</span>
           </div>
+
+          <p className="text-center text-sm text-gray-700 mb-4 font-semibold">
+            Local crews typically respond within 60 minutes
+          </p>
 
           {/* FORM */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -76,7 +106,7 @@ export default function Home() {
               name="name"
               placeholder="Full Name"
               required
-              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900"
             />
 
             <input
@@ -84,22 +114,22 @@ export default function Home() {
               name="phone"
               placeholder="Phone Number"
               required
-              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900"
             />
 
             <input
               type="text"
               name="zip"
-              placeholder="Philadelphia Zip Code"
+              placeholder="Zip Code"
               required
-              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900"
             />
 
             <textarea
               name="message"
-              placeholder="What happened?"
+              placeholder="Briefly describe the damage (optional)"
               rows={3}
-              className="border border-gray-300 p-3 rounded-lg text-gray-900 placeholder-gray-500 bg-white"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900"
             />
 
             <button
@@ -107,39 +137,21 @@ export default function Home() {
               disabled={loading}
               className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg text-lg font-semibold"
             >
-              {loading ? "Submitting..." : "Get Help Now"}
+              {loading ? "Submitting..." : "Get Immediate Help"}
             </button>
 
           </form>
 
-          {/* CALL CTA */}
-          <a
-            href="tel:+12677742486"
-            onClick={() => {
-              if (typeof window !== "undefined" && (window as any).gtag) {
-                (window as any).gtag("event", "conversion", {
-                  // ✅ CALL CONVERSION LABEL (correct one)
-                  send_to: "AW-18133169855/JOpuCPzv5aYcEL_tyMZD",
-                  value: 1.0,
-                  currency: "USD",
-                });
-              }
-            }}
-            className="block text-center mt-4 text-blue-600 font-semibold text-lg"
-          >
-            Or Call Now: (267) 774-2486
-          </a>
-
           {/* TRUST TEXT */}
           <p className="text-xs text-gray-600 mt-4 text-center">
-            We connect Philadelphia homeowners with trusted local water damage specialists.
+            Free service connection. No obligation.
           </p>
 
         </div>
 
         {/* URGENCY */}
         <p className="text-center text-xs text-gray-500 mt-4">
-          Emergency crews are responding in Philadelphia right now
+          Emergency crews are responding in your area right now
         </p>
 
       </div>
