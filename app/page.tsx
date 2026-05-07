@@ -84,7 +84,7 @@ export default function Home() {
             alt="Water damage emergency"
             width={500}
             height={300}
-            className="rounded-lg mb-4"
+            className="rounded-lg mb-4 w-full h-auto"
           />
 
           {/* TRUST */}
