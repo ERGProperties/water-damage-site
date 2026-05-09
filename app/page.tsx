@@ -31,7 +31,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-10">
+    <main className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10">
       <div className="max-w-md w-full">
 
         {/* LOGO */}
@@ -44,12 +44,13 @@ export default function Home() {
             priority
             className="mb-2"
           />
+
           <p className="text-sm text-gray-600 text-center">
-            Philadelphia & Surrounding Areas • 24/7 Emergency Response
+            Serving Philadelphia Homeowners 24/7
           </p>
         </div>
 
-        {/* EMERGENCY CALL CTA (TOP) */}
+        {/* TOP CALL CTA */}
         <a
           href="tel:+12677742486"
           onClick={() => {
@@ -61,21 +62,26 @@ export default function Home() {
               });
             }
           }}
-          className="block text-center mb-4 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl text-lg"
+          className="block text-center mb-4 bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl text-lg shadow-lg"
         >
-          🚨 Call Now for Immediate Help (267) 774-2486
+          🚨 Call Philadelphia Emergency Response
+          <div className="text-2xl mt-1">(267) 774-2486</div>
         </a>
 
-        {/* CARD */}
-        <div className="bg-white p-6 rounded-2xl shadow-md">
+        {/* MAIN CARD */}
+        <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
 
           {/* HEADLINE */}
-          <h1 className="text-2xl font-bold text-center mb-2 text-gray-900">
-            Emergency Water Damage? Get Help in 60 Minutes
+          <h1 className="text-3xl font-extrabold text-center mb-3 text-gray-900 leading-tight">
+            Emergency Water Damage?
+            <span className="block text-red-600 mt-1">
+              Get Help Within 60 Minutes
+            </span>
           </h1>
 
-          <p className="text-center text-gray-700 mb-3">
-            Damage spreads every hour. Get connected with a local professional now.
+          {/* SUBTEXT */}
+          <p className="text-center text-gray-700 mb-4 text-base">
+            Water damage spreads fast. Connect with a local Philadelphia professional now before costs increase.
           </p>
 
           {/* IMAGE */}
@@ -84,19 +90,41 @@ export default function Home() {
             alt="Water damage emergency"
             width={500}
             height={300}
-            className="rounded-lg mb-4 w-full h-auto"
+            className="rounded-xl mb-4 w-full h-auto shadow-md"
           />
 
-          {/* TRUST */}
-          <div className="flex justify-center gap-3 text-xs text-gray-600 mb-3">
-            <span>✔ 24/7 Response</span>
-            <span>✔ Local Experts</span>
-            <span>✔ Fast Dispatch</span>
+          {/* TRUST BADGES */}
+          <div className="flex justify-center gap-2 text-xs text-gray-700 mb-4 flex-wrap">
+            <span className="bg-gray-100 px-2 py-1 rounded-full">
+              ✔ 24/7 Emergency Response
+            </span>
+
+            <span className="bg-gray-100 px-2 py-1 rounded-full">
+              ✔ Local Philadelphia Pros
+            </span>
+
+            <span className="bg-gray-100 px-2 py-1 rounded-full">
+              ✔ Fast Dispatch
+            </span>
           </div>
 
-          <p className="text-center text-sm text-gray-700 mb-4 font-semibold">
-            Local crews typically respond within 60 minutes
-          </p>
+          {/* TRUST LINE */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+            <p className="text-center text-sm font-semibold text-blue-900">
+              Local crews typically respond within 60 minutes
+            </p>
+          </div>
+
+          {/* TESTIMONIAL */}
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-5">
+            <p className="text-sm italic text-gray-700 text-center">
+              “They called me back within minutes after my basement flooded.”
+            </p>
+
+            <p className="text-xs text-gray-500 text-center mt-2">
+              — Philadelphia Homeowner
+            </p>
+          </div>
 
           {/* FORM */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -106,7 +134,7 @@ export default function Home() {
               name="name"
               placeholder="Full Name"
               required
-              className="border border-gray-300 p-3 rounded-lg text-gray-900"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 bg-white"
             />
 
             <input
@@ -114,7 +142,7 @@ export default function Home() {
               name="phone"
               placeholder="Phone Number"
               required
-              className="border border-gray-300 p-3 rounded-lg text-gray-900"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 bg-white"
             />
 
             <input
@@ -122,36 +150,36 @@ export default function Home() {
               name="zip"
               placeholder="Zip Code"
               required
-              className="border border-gray-300 p-3 rounded-lg text-gray-900"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 bg-white"
             />
 
             <textarea
               name="message"
-              placeholder="Briefly describe the damage (optional)"
+              placeholder="Briefly describe the damage"
               rows={3}
-              className="border border-gray-300 p-3 rounded-lg text-gray-900"
+              className="border border-gray-300 p-3 rounded-lg text-gray-900 bg-white"
             />
 
             <button
               type="submit"
               disabled={loading}
-              className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg text-lg font-semibold"
+              className="bg-blue-600 hover:bg-blue-700 transition text-white p-4 rounded-xl text-lg font-bold shadow-md"
             >
               {loading ? "Submitting..." : "Get Immediate Help"}
             </button>
 
           </form>
 
-          {/* TRUST TEXT */}
-          <p className="text-xs text-gray-600 mt-4 text-center">
-            Free service connection. No obligation.
+          {/* BOTTOM TRUST */}
+          <p className="text-xs text-gray-500 mt-4 text-center leading-relaxed">
+            No obligation. Fast local response from trusted professionals serving the Philadelphia area.
           </p>
 
         </div>
 
-        {/* URGENCY */}
+        {/* FOOTER URGENCY */}
         <p className="text-center text-xs text-gray-500 mt-4">
-          Emergency crews are responding in your area right now
+          Emergency crews are responding in Philadelphia right now
         </p>
 
       </div>
